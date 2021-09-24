@@ -7,7 +7,7 @@ ARG DEBIAN_FRONTEND=noninteractive
 
 ENV GIT_BRANCH stable
 ENV GIT_URL ${PROJECT_URL}.git
-ENV PROJECT_URL https://github.com/zammad/zammad
+ENV PROJECT_URL https://github.com/myplant-io/zammad
 ENV RAILS_ENV production
 ENV RAILS_LOG_TO_STDOUT true
 ENV TAR_GZ_URL ${PROJECT_URL}/archive/${GIT_BRANCH}.tar.gz
@@ -34,7 +34,7 @@ LABEL org.label-schema.build-date="$BUILD_DATE" \
       org.label-schema.license="AGPL-3.0" \
       org.label-schema.description="Docker container for Zammad - Data Container" \
       org.label-schema.url="https://zammad.org" \
-      org.label-schema.vcs-url="https://github.com/zammad/zammad" \
+      org.label-schema.vcs-url="https://github.com/myplant-io/zammad" \
       org.label-schema.vcs-type="Git" \
       org.label-schema.vendor="Zammad" \
       org.label-schema.schema-version="4.1.0" \
