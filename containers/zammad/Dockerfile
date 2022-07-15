@@ -5,7 +5,7 @@ FROM ruby:3.0.4-slim AS builder
 ARG BUILD_DATE
 ARG DEBIAN_FRONTEND=noninteractive
 
-ENV GIT_BRANCH stable-4.1
+ENV GIT_BRANCH stable
 ENV GIT_URL ${PROJECT_URL}.git
 ENV PROJECT_URL https://github.com/myplant-io/zammad
 ENV RAILS_ENV production
@@ -40,7 +40,7 @@ LABEL org.label-schema.build-date="$BUILD_DATE" \
       org.label-schema.schema-version="5.2.1" \
       org.label-schema.docker.cmd="sysctl -w vm.max_map_count=262144;docker-compose up"
 
-ENV GIT_BRANCH stable-4.1
+ENV GIT_BRANCH stable
 ENV RAILS_ENV production
 ENV RAILS_LOG_TO_STDOUT true
 ENV ZAMMAD_DIR /opt/zammad
