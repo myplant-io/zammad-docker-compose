@@ -106,7 +106,7 @@ if [ "$1" = 'zammad-init' ]; then
     if [ "${ELASTICSEARCH_REINDEX}" == "true" ]; then
       if ! curl -s "${SSL_SKIP_VERIFY}" "${ELASTICSEARCH_SCHEMA}://${ELASTICSEARCH_HOST}:${ELASTICSEARCH_PORT}/_cat/indices" | grep -q zammad; then
         echo "rebuilding es searchindex..."
-        bundle exec rake searchindex:rebuild
+        bundle exec rake zammad:searchindex:rebuild
       fi
     fi
   fi
@@ -155,9 +155,9 @@ if [ "$1" = 'zammad-scheduler' ]; then
 
   cd "${ZAMMAD_DIR}"
 
-  echo "starting scheduler..."
+  echo "starting background services..."
 
-  exec bundle exec script/scheduler.rb run
+  exec bundle exec script/background-worker.rb start
 fi
 
 
